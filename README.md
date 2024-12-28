@@ -34,15 +34,22 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Open Quartus-II and create a new verilog file 2.Then code the program and run it 3.Check the RTL logic is correct 4.set end time and insert node 5.Get the waveform and write the resul
 
 **PROGRAM**
+module Exp7(j, k, clk, rst,q); input j, k, clk, rst; output reg q;
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+always @(posedge clk or posedge rst) begin if (rst) q <= 0; // Reset the flip-flop else begin case ({j, k}) // J and K control the behavior 2'b00: q <= q; // No change 2'b01: q <= 0; // Reset 2'b10: q <= 1; // Set 2'b11: q <= ~q; // Toggle endcase end end
+
+endmodule
+
 
 **RTL LOGIC FOR FLIPFLOPS**
+![398972101-ba5a3838-9a7a-43dc-b7e0-1fd333760c54](https://github.com/user-attachments/assets/eda28a12-cb6a-4774-a4ad-caa381f0cc68)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![398972123-508efb7c-6c03-45e5-85e1-eb578552f8e7](https://github.com/user-attachments/assets/20d05364-236c-4407-8550-cdf1ab062255)
 
-**RESULTS**
+
+**RESULTS**Thus the given JK flipflops are designed and verified using Verilog programming
